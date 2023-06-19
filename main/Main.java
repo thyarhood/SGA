@@ -13,9 +13,9 @@ public class Main {
   Aluno a2;
   a2= new Aluno ("Ana Clara do Espirito Santo Vilas Boas", 1001, 3, "Integrado em Informática");
   Aluno a3;
-  a3= new Aluno ("Breno Henrique Moreira de Jesus", 1003, 3, "Integrado em Informática");
+  a3= new Aluno ("Breno Henrique Moreira de Jesus", 1001, 3, "Integrado em Informática");
   Aluno a4;
-  a4= new Aluno ("Maria Eduarda Marangon", 1004, 3, "Integrado em Informática");
+  a4= new Aluno ("Maria Eduarda Marangon", 1001, 3, "Integrado em Informática");
   Aluno a5;
   a5= new Aluno ("Renan Cristiano Costa", 1005, 3, "Integrado em Informática");
   Aluno a6;
@@ -47,19 +47,20 @@ public class Main {
   Disciplina d2 = new Disciplina("Programação Mobile", 1, 4, 4,p2);
   Disciplina d3 = new Disciplina("Espanhol", 1, 4, 4,p1);
   
-  
  System.out.println(d1.matricularAluno(a1));
  System.out.println(d1.matricularAluno(a2));
  System.out.println(d1.matricularAluno(a3));
  System.out.println(d1.matricularAluno(a4));
  System.out.println(d1.matricularAluno(a5));
   
+ System.out.println(" ");
  System.out.println(d2.matricularAluno(a6));
  System.out.println(d2.matricularAluno(a7));
  System.out.println(d2.matricularAluno(a8));
  System.out.println(d2.matricularAluno(a9));
  System.out.println(d2.matricularAluno(a10));
   
+ System.out.println(" ");
  System.out.println(d3.matricularAluno(a11));
  System.out.println(d3.matricularAluno(a12));
  System.out.println(d3.matricularAluno(a13));
@@ -67,7 +68,21 @@ public class Main {
  System.out.println(d3.matricularAluno(a15));
  
  System.out.println(" ");
- System.out.println(d3.desmatricularAluno(2));
+ System.out.println(d1.desmatricularAluno(4));
+ 
+ d3.removerProfessor();
+ 
+ System.out.println(" ");
+ d3.exibirAprovados();
+ 
+ System.out.println(" ");
+ System.out.println(d3.getQuantidadeReprovados());
+ 
+ System.out.println(" ");
+ System.out.println(d3.estaAprovado(3));
+ 
+ System.out.println(" ");
+ System.out.println(d3.getNotaAluno(3));
   
   
   
