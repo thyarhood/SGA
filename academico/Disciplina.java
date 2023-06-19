@@ -49,7 +49,7 @@ private ArrayList<Integer>frequencia;
  }
 }
  
- public boolean verificaRaAluno(Aluno aluno) {
+ private boolean verificaRaAluno(Aluno aluno) {
   boolean a = false;
   if(this.alunos.size() > 1) {
   for(int i = 0; i < this.alunos.size() - 1; i++) {
@@ -73,6 +73,53 @@ private ArrayList<Integer>frequencia;
   }
  }
  
+ public void removerProfessor() {
+  this.professor = null;
+ }
+ 
+ public void exibirAprovados() {
+  int a = 0;
+  if(alunos.size() != 0) {
+   for(int i = 0; i < alunos.size() - 1; i++) {
+    if(notas.get(i) >= 6 && frequencia.get(i) >= 75) {
+     System.out.println("O aluno " + alunos.get(i).getNome() + " cujo o RA é " + alunos.get(i).getRa() + " foi aprovado");
+    }
+    else {
+     a++;
+    }
+   }
+   if(a == alunos.size() - 1) {
+    System.out.println("Não há alunos aprovados");
+   }
+  }
+  else {
+  System.out.println("Disciplinas não possui alunos matriculados");
+  }
+ }
+ 
+ public int getQuantidadeReprovados() {
+  int a = 0;
+  for(int i = 0; i < alunos.size() - 1; i++) {
+   if(notas.get(i) <= 6 && frequencia.get(i) >= 75) {
+    a++;
+   }
+  }
+  return a;
+ }
+ 
+ public boolean estaAprovado(int posAluno) {
+  if(notas.get(posAluno) >= 6 && frequencia.get(posAluno) >= 75) {
+   return true;
+  }
+  else {
+   return false;
+  }
+ }
+ 
+ public double getNotaAluno(int posAluno) {
+  return notas.get(posAluno);
+ }
+
     
 }
 
