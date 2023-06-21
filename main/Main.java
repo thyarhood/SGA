@@ -17,7 +17,7 @@ public class Main {
   Aluno a4;
   a4= new Aluno ("Maria Eduarda Marangon", 1001, 3, "Integrado em Informática");
   Aluno a5;
-  a5= new Aluno ("Renan Cristiano Costa", 1005, 3, "Integrado em Informática");
+  a5= new Aluno ("Renan Cristiano Costa", 1001, 3, "Integrado em Informática");
   Aluno a6;
   a6= new Aluno ("Bruna Cristina Carvalho", 1006, 2, "Integrado em Administração");
   Aluno a7;
@@ -83,11 +83,10 @@ public class Main {
  
  System.out.println(" ");
  System.out.println(d3.getNotaAluno(3));
-  
-  
-  
-  
-
+ 
+ System.out.println(" ");
+ System.out.println(d3.getQuantidadeAprovados());
+ 
  }
 
 }
