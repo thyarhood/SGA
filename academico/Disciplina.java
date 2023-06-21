@@ -137,5 +137,25 @@ private ArrayList<Integer>frequencia;
  public double getFrequenciaAluno(int posAluno) {
 	 return frequencia.get(posAluno);
  }
-    
+ 
+ public void exibirReprovados() {
+ int a = 0;
+  if(alunos.size() != 0) {
+   for(int i = 0; i <= alunos.size() - 1; i++) {
+    if(notas.get(i) <= 6 && frequencia.get(i) <= 75) {
+     System.out.println(i);
+     System.out.println("O aluno " + alunos.get(i).getNome() + " cujo o RA é " + alunos.get(i).getRa() + " foi reprovado");
+    }
+    else {
+     a++;
+    }
+   }
+   if(a == alunos.size() - 1) {
+    System.out.println("Não há alunos reprovados");
+   }
+  }
+  else {
+  System.out.println("Disciplinas não possui alunos matriculados");
+  }
+ }    
 }
