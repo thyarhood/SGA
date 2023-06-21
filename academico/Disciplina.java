@@ -73,6 +73,10 @@ private ArrayList<Integer>frequencia;
   }
  }
  
+ public void setProfessor(Professor professor) {
+	 this.professor = professor;
+ }
+ 
  public void removerProfessor() {
   this.professor = null;
  }
@@ -100,10 +104,16 @@ private ArrayList<Integer>frequencia;
  public int getQuantidadeReprovados() {
   int a = 0;
   for(int i = 0; i < alunos.size() - 1; i++) {
-   if(notas.get(i) <= 6 && frequencia.get(i) >= 75) {
+   if(notas.get(i) <= 6 && frequencia.get(i) <= 75) {
     a++;
    }
   }
+  return a;
+ }
+ 
+ public int getQuantidadeAprovados() {
+  int a;
+  a = (alunos.size() - 1) -  this.getQuantidadeReprovados();
   return a;
  }
  
@@ -119,7 +129,13 @@ private ArrayList<Integer>frequencia;
  public double getNotaAluno(int posAluno) {
   return notas.get(posAluno);
  }
+ 
+ public int getNumeroAlunos() {
+	 return alunos.size() - 1;
+ }
 
+ public double getFrequenciaAluno(int posAluno) {
+	 return frequencia.get(posAluno);
+ }
     
 }
-
