@@ -104,8 +104,6 @@ public class Main {
  System.out.println(" ");
  System.out.println(d3.getQuantidadeAprovados());
  
-
- 
  System.out.println(" ");
  d3.exibirProfessor();
  
@@ -119,10 +117,10 @@ public class Main {
  d3.exibirAlunosAbaixoDaMedia();
 
 System.out.println(" ");
-d3.exibeOrdemNotas(4);
+d3.exibirOrdenadoPorNotas(4);
 
 System.out.println(" ");
-d3.exibeOrdemNotasNomes();
+d3.exibirOrdenadosPorNotas();
  
  
  }
