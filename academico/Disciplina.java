@@ -157,7 +157,7 @@ private ArrayList<Integer>frequencia;
   System.out.println("Disciplinas não possui alunos matriculados");
   }
 }
-	 
+  
  
  public void exibirProfessor() {
   if(this.professor != null) {
@@ -238,16 +238,18 @@ private ArrayList<Integer>frequencia;
   notas.set(posAluno, nota);
  }
  
- public double[] ordenaNotas() {
+ public String[][] ordenaNotas() {
   int contador=0,contadorMaior=0;
-  double n=0, m=0;
-  double num[] = new double[notas.size()];
+  String n="", m="", n1="", m1="";
+  String numNomes[][] = new String[notas.size()][notas.size()];
   
   for(int i = 0; i <= notas.size() - 1; i++) {
-   num[i] = notas.get(i);
+   numNomes[i][0] = String.valueOf(notas.get(i));
+   numNomes[i][1] = alunos.get(i).getNome();
+   
    if(i > 0) {
     for(int a = i - 1; a >= 0; a-- ) {
-     if(num[a] <= num[i]) {
+     if(Double.parseDouble(numNomes[a][0]) <= Double.parseDouble(numNomes[i][0])) {
       contadorMaior++;
      }
      else {
@@ -258,48 +260,61 @@ private ArrayList<Integer>frequencia;
      if(contadorMaior > 0) {
       for(int b = i - contadorMaior; b <= i; b++ ) {
        if(contador == 0) {
-        m = num[b];
-        num[i - contadorMaior] = num[i];
-        num[i] = m;
+        m = numNomes[b][0];
+        numNomes[i - contadorMaior][0] = numNomes[i][0];
+        numNomes[i][0] = m;
+        
+        m1 = numNomes[b][1];
+        numNomes[i - contadorMaior][1] = numNomes[i][1];
+        numNomes[i][1] = m1;
+        
         contador++;
        }
        else if(contador%2 == 0 && contador != 0) {
-        m = num[b];
-        num[b] = n;
+        m = numNomes[b][0];
+        numNomes[b][0] = n;
+        
+        m1 = numNomes[b][1];
+        numNomes[b][1] = n1;
+  
         contador++;
        }
        else if(contador%2 != 0){
-        n = num[b];
-        num[b] = m;
+        n = numNomes[b][0];
+        numNomes[b][0] = m;
+        
+        n1 = numNomes[b][1];
+        numNomes[b][1] = m1;
+        
         contador++;
        }
       }
       contadorMaior = 0;   
      }
    }
-  } 
-   return num;
+  }
+  
+   return numNomes;
  }
  
- public void exibeOrdemNotas(int posAluno) {
+ public void exibirOrdenadoPorNotas(int posAluno) {
   int contador = 0;
-  double a[] = ordenaNotas();
+  String a[][] = ordenaNotas();
   for(int i = 0; i <= notas.size() - 1; i++) {
-   if(notas.get(posAluno) == a[i] && contador == 0) {
-	 System.out.println(a[i] + " nota do aluno");
-	 contador++;
+   if(notas.get(posAluno) == Double.parseDouble(a[i][0]) && contador == 0) {
+  System.out.println(a[i][0] + " nota do aluno especificado");
+  contador++;
    }
    else {
-	 System.out.println(a[i]);
+  System.out.println(a[i][0]);
    }
-  
   }
  }
  
- public void exibeOrdemNotasNomes() {
-  double a[] = ordenaNotas();
+ public void exibirOrdenadosPorNotas() {
+  String a[][] = ordenaNotas();
   for(int i = 0; i <= notas.size() - 1; i++) {
-	 System.out.println(a[i] + alunos.get(i).getNome());
+  System.out.println(a[i][0] + " " + a[i][1]);
   }
  }
  
@@ -307,5 +322,4 @@ private ArrayList<Integer>frequencia;
  
  
 }
-
 
