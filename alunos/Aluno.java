@@ -1,20 +1,20 @@
 package ifsuldeminas.alunos;
 
  public class Aluno {
- private static String nome;
+ private String nome;
  private int ra;
  private String curso;
  private int período=1;
 
 
     
-    public Aluno(String nome, int ra, int periodo, String curso) {
-     this.nome=nome;
-     this.curso=curso;
-     this.ra=ra;
-     this.período=periodo;
-     
-    }
+ public Aluno(String nome, int ra, int periodo, String curso) {
+  this.nome = nome;
+  this.curso=curso;
+  this.ra=ra;
+  this.período=periodo;
+  
+ }
  
  public String getNome(){
   return nome;
