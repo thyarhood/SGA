@@ -45,7 +45,7 @@ public class Main {
   
   Disciplina d1 = new Disciplina("Matemática", 1, 4, 4,p3);
   Disciplina d2 = new Disciplina("Programação Mobile", 1, 4, 4,p2);
-  Disciplina d3 = new Disciplina("Espanhol", 1, 4, 4,p1);
+  Disciplina d3 = new Disciplina("Espanhol", 1, 5, 2,p1);
   
  System.out.println(d1.matricularAluno(a1));
  System.out.println(d1.matricularAluno(a2));
@@ -67,6 +67,20 @@ public class Main {
  System.out.println(d3.matricularAluno(a14));
  System.out.println(d3.matricularAluno(a15));
  
+ d3.addNota(0, 8);
+ d3.addNota(1, 9);
+ d3.addNota(2, 10);
+ d3.addNota(3, 7);
+ d3.addNota(4, 6);
+ 
+ System.out.println(" ");
+ System.out.println(d3.addFrequencia(0, 8));
+ System.out.println(d3.addFrequencia(1, 9));
+ System.out.println(d3.addFrequencia(2, 10));
+ System.out.println(d3.addFrequencia(3, 7));
+ System.out.println(d3.addFrequencia(4, 6));
+ 
+ 
  System.out.println(" ");
  System.out.println(d1.desmatricularAluno(4));
  
@@ -76,10 +90,13 @@ public class Main {
  d3.exibirAprovados();
  
  System.out.println(" ");
+ d3.exibirReprovados();
+ 
+ System.out.println(" ");
  System.out.println(d3.getQuantidadeReprovados());
  
  System.out.println(" ");
- System.out.println(d3.estaAprovado(3));
+ System.out.println(d3.estaAprovado(2));
  
  System.out.println(" ");
  System.out.println(d3.getNotaAluno(3));
@@ -87,29 +104,25 @@ public class Main {
  System.out.println(" ");
  System.out.println(d3.getQuantidadeAprovados());
  
- System.out.println(" ");
- d3.exibirReprovados();
+
  
  System.out.println(" ");
  d3.exibirProfessor();
  
  System.out.println(" ");
- d3.getAproveitamentoAluno(2);
+ d3.getAproveitamentoAluno();
  
  System.out.println(" ");
  d3.exibirAlunosAcimaDaMedia();
  
  System.out.println(" ");
  d3.exibirAlunosAbaixoDaMedia();
- 
-d3.addNota(0, 8);
-d3.addNota(1, 9);
-d3.addNota(2, 10);
-d3.addNota(3, 7);
-d3.addNota(4, 6);
 
 System.out.println(" ");
-d3.exibeOrdemNotas();
+d3.exibeOrdemNotas(4);
+
+System.out.println(" ");
+d3.exibeOrdemNotasNomes();
  
  
  }
