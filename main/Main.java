@@ -121,6 +121,19 @@ d3.exibirOrdenadoPorNotas(4);
 
 System.out.println(" ");
 d3.exibirOrdenadosPorNotas();
+
+System.out.println(" ");
+System.out.println(d3.calcularMedia());
+
+System.out.println(" ");
+d3.exibeDisciplina();
+
+System.out.println(" ");
+d3.exibirMaiorNota();
+
+System.out.println(" ");
+ d3.exibirMenorNota();
+ 
  
  
  }
