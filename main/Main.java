@@ -87,6 +87,31 @@ public class Main {
  System.out.println(" ");
  System.out.println(d3.getQuantidadeAprovados());
  
+ System.out.println(" ");
+ d3.exibirReprovados();
+ 
+ System.out.println(" ");
+ d3.exibirProfessor();
+ 
+ System.out.println(" ");
+ d3.getAproveitamentoAluno(2);
+ 
+ System.out.println(" ");
+ d3.exibirAlunosAcimaDaMedia();
+ 
+ System.out.println(" ");
+ d3.exibirAlunosAbaixoDaMedia();
+ 
+d3.addNota(0, 8);
+d3.addNota(1, 9);
+d3.addNota(2, 10);
+d3.addNota(3, 7);
+d3.addNota(4, 6);
+
+System.out.println(" ");
+d3.exibeOrdemNotas();
+ 
+ 
  }
 
 }
